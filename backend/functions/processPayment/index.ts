@@ -3,7 +3,6 @@ import { apollo, gql } from '../_lib/apollo'
 
 const handler = async (req, res) => {
   const { amount, currency, intent } = req?.body?.input
-
   try {
     const params = new URLSearchParams()
     params.append('amount', amount)
@@ -30,7 +29,7 @@ const handler = async (req, res) => {
       status: responseStripe?.data?.status,
       method: responseStripe?.data?.payment_method,
       receipt_url: responseStripe?.data?.receipt_url,
-      processor: 'Stripe',
+      processor: 'Stripe', // at the future it could be variable for different processors
     }
 
     await apollo.mutate({
@@ -52,7 +51,6 @@ const handler = async (req, res) => {
     return res.json(responseStripe.data)
   } catch (error) {
     console.log(error)
-
     // Specific error messages based on the error type
     if (error.response && error.response.config.url.includes('stripe-mock')) {
       return res
