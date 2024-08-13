@@ -1,0 +1,58 @@
+actions:
+  - name: processPayment
+    definition:
+      kind: asynchronous
+      handler: http://functions:3000/processPayment
+      forward_client_headers: true
+      request_transform:
+        method: POST
+        query_params: {}
+        template_engine: Kriti
+        version: 2
+  - name: readItemItemsItemIdGet
+    definition:
+      kind: ""
+      handler: http://fastapi:8000
+      forward_client_headers: true
+      request_transform:
+        method: GET
+        query_params:
+          q: '{{$body.input?.q}}'
+        request_headers:
+          add_headers: {}
+          remove_headers:
+            - content-type
+        template_engine: Kriti
+        url: '{{$base_url}}/items/{{$body.input.itemId}}'
+        version: 2
+  - name: readRootGet
+    definition:
+      kind: ""
+      handler: http://fastapi:8000
+      forward_client_headers: true
+      request_transform:
+        method: GET
+        query_params: {}
+        template_engine: Kriti
+        url: '{{$base_url}}/'
+        version: 2
+custom_types:
+  enums: []
+  input_objects: []
+  objects:
+    - name: Address
+    - name: BillingDetails
+    - name: Card
+    - name: Checks
+    - name: Data
+    - name: DestinationDetails
+    - name: ExtendedAuthorization
+    - name: IncrementalAuthorization
+    - name: Multicapture
+    - name: NetworkToken
+    - name: Overcapture
+    - name: PaymentMethodDetails
+    - name: Refunds
+    - name: SampleOutput
+  scalars:
+    - name: JSON

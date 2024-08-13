@@ -1,0 +1,63 @@
+table:
+  name: post
+  schema: public
+object_relationships:
+  - name: user
+    using:
+      foreign_key_constraint_on: user_id
+array_relationships:
+  - name: post_keywords
+    using:
+      foreign_key_constraint_on:
+        column: post_id
+        table:
+          name: post_keyword
+          schema: public
+insert_permissions:
+  - role: user
+    permission:
+      check:
+        user_id:
+          _eq: X-Hasura-User-Id
+      columns:
+        - content
+        - status
+        - title
+        - created_at
+        - hidden_at
+        - updated_at
+        - id
+        - user_id
+    comment: ""
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - content
+        - status
+        - title
+        - created_at
+        - hidden_at
+        - updated_at
+        - id
+        - user_id
+      filter: {}
+      allow_aggregations: true
+    comment: ""
+update_permissions:
+  - role: user
+    permission:
+      columns:
+        - content
+        - status
+        - title
+        - created_at
+        - hidden_at
+        - updated_at
+        - id
+        - user_id
+      filter:
+        user_id:
+          _eq: X-Hasura-User-Id
+      check: null
+    comment: ""

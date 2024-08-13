@@ -1,0 +1,17 @@
+{
+  "name": "functions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/client": "^3.11.4",
+    "axios": "^1.7.3",
+    "graphql": "^16.9.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.2.0"
+  }
+}
