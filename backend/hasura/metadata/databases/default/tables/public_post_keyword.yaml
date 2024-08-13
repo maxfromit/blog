@@ -19,7 +19,7 @@ insert_permissions:
         - created_at
         - keyword_id
         - post_id
-    comment: ""
+    comment: ''
 select_permissions:
   - role: user
     permission:
@@ -29,7 +29,7 @@ select_permissions:
         - post_id
       filter: {}
       allow_aggregations: true
-    comment: ""
+    comment: ''
 update_permissions:
   - role: user
     permission:
@@ -42,7 +42,7 @@ update_permissions:
           user_id:
             _eq: X-Hasura-User-Id
       check: null
-    comment: ""
+    comment: ''
 delete_permissions:
   - role: user
     permission:
@@ -50,4 +50,4 @@ delete_permissions:
         post:
           user_id:
             _eq: X-Hasura-User-Id
-    comment: ""
+    comment: ''
