@@ -41,7 +41,15 @@ select_permissions:
         - updated_at
         - id
         - user_id
-      filter: {}
+      filter:
+        _or:
+          - _and:
+              - user_id:
+                  _eq: X-Hasura-User-Id
+              - hidden_at:
+                  _is_null: false
+          - hidden_at:
+              _is_null: true
       allow_aggregations: true
     comment: ""
 update_permissions:
