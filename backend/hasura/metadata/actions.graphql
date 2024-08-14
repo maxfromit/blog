@@ -1,20 +1,20 @@
+type Query {
+  getGreatings: JSON
+}
+
+type Query {
+  getItemIdAndQ(
+    itemId: Int!
+    q: JSON
+  ): JSON
+}
+
 type Mutation {
   processPayment(
     amount: Float!
     currency: String!
     intent: String!
   ): SampleOutput
-}
-
-type Query {
-  readItemItemsItemIdGet(
-    itemId: Int!
-    q: JSON
-  ): JSON
-}
-
-type Query {
-  readRootGet: JSON
 }
 
 type Address {

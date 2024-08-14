@@ -1,15 +1,20 @@
 actions:
-  - name: processPayment
+  - name: getGreatings
     definition:
-      kind: asynchronous
-      handler: http://functions:3000/processPayment
+      kind: ""
+      handler: http://fastapi:8000
       forward_client_headers: true
       request_transform:
-        method: POST
+        method: GET
         query_params: {}
+        request_headers:
+          add_headers: {}
+          remove_headers:
+            - content-type
         template_engine: Kriti
+        url: '{{$base_url}}/'
         version: 2
-  - name: readItemItemsItemIdGet
+  - name: getItemIdAndQ
     definition:
       kind: ""
       handler: http://fastapi:8000
@@ -25,16 +30,15 @@ actions:
         template_engine: Kriti
         url: '{{$base_url}}/items/{{$body.input.itemId}}'
         version: 2
-  - name: readRootGet
+  - name: processPayment
     definition:
-      kind: ""
-      handler: http://fastapi:8000
+      kind: asynchronous
+      handler: http://functions:3000/processPayment
       forward_client_headers: true
       request_transform:
-        method: GET
+        method: POST
         query_params: {}
         template_engine: Kriti
-        url: '{{$base_url}}/'
         version: 2
 custom_types:
   enums: []
