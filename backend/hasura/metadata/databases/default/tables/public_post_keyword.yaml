@@ -17,7 +17,6 @@ insert_permissions:
             _eq: X-Hasura-User-Id
       columns:
         - created_at
-        - updated_at
         - keyword_id
         - post_id
     comment: ""
@@ -26,7 +25,6 @@ select_permissions:
     permission:
       columns:
         - created_at
-        - updated_at
         - keyword_id
         - post_id
       filter: {}
@@ -37,7 +35,6 @@ update_permissions:
     permission:
       columns:
         - created_at
-        - updated_at
         - keyword_id
         - post_id
       filter:
