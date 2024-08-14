@@ -3,7 +3,6 @@ CREATE TABLE
         "post_id" uuid NOT NULL,
         "keyword_id" uuid NOT NULL,
         "created_at" timestamptz NOT NULL DEFAULT now (),
-        "updated_at" timestamptz NOT NULL DEFAULT now (),
         PRIMARY KEY ("post_id", "keyword_id"),
         FOREIGN KEY ("keyword_id") REFERENCES "public"."keyword" ("id") ON UPDATE restrict ON DELETE restrict,
         FOREIGN KEY ("post_id") REFERENCES "public"."post" ("id") ON UPDATE restrict ON DELETE restrict
