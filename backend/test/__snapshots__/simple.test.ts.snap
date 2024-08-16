@@ -1,0 +1,26 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`First test > gets post 1`] = `
+[
+  {
+    "__typename": "post",
+    "id": "4c6ecaff-1908-4e82-a633-e27a2b18d594",
+  },
+  {
+    "__typename": "post",
+    "id": "51b5a629-a444-4835-816e-5c7feac099e0",
+  },
+  {
+    "__typename": "post",
+    "id": "ae348f93-300d-4878-a79b-34adf299eeba",
+  },
+  {
+    "__typename": "post",
+    "id": "ffa90e0f-7e39-4704-929f-1534b0907fc3",
+  },
+  {
+    "__typename": "post",
+    "id": "3b340a7b-9d0c-4598-9f52-fa36d5f2853b",
+  },
+]
+`;

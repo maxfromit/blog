@@ -1,0 +1,27 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vitest --bail 1 --watch .",
+    "test": "vitest ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/client": "^3.11.4",
+    "cross-fetch": "^4.0.0",
+    "dotenv": "^16.4.5",
+    "dotenv-expand": "^11.0.6",
+    "express": "^4.19.2",
+    "find-config": "^1.0.0",
+    "graphql": "^16.9.0",
+    "tsx": "^4.17.0",
+    "vitest": "^2.0.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.4.0"
+  }
+}
