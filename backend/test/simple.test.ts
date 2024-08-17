@@ -33,11 +33,6 @@ describe('Flow', () => {
         title: 'Visible Post',
         content: 'This post is visible.',
       },
-      context: {
-        headers: {
-          'x-hasura-admin-secret': process.env.HASURA_GRAPHQL_ADMIN_SECRET,
-        },
-      },
     })
     postIdWithHiddenAtNull = result1.data.insert_post_one.id
 
@@ -65,11 +60,6 @@ describe('Flow', () => {
         userId: userId1,
         title: 'Hidden Post',
         content: 'This post is hidden.',
-      },
-      context: {
-        headers: {
-          'x-hasura-admin-secret': process.env.HASURA_GRAPHQL_ADMIN_SECRET,
-        },
       },
     })
     postIdWithHiddenAtNotNull = result2.data.insert_post_one.id
