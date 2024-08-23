@@ -28,7 +28,7 @@ insert_permissions:
         - updated_at
         - id
         - user_id
-    comment: ''
+    comment: ""
 select_permissions:
   - role: user
     permission:
@@ -56,7 +56,7 @@ select_permissions:
               - status:
                   _eq: published
       allow_aggregations: true
-    comment: ''
+    comment: ""
 update_permissions:
   - role: user
     permission:
@@ -73,4 +73,19 @@ update_permissions:
         user_id:
           _eq: X-Hasura-User-Id
       check: null
-    comment: ''
+    comment: ""
+event_triggers:
+  - name: log_post
+    definition:
+      delete:
+        columns: '*'
+      enable_manual: true
+      insert:
+        columns: '*'
+      update:
+        columns: '*'
+    retry_conf:
+      interval_sec: 10
+      num_retries: 0
+      timeout_sec: 60
+    webhook: http://functions:3000/logMutation

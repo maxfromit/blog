@@ -30,8 +30,8 @@ describe('Flow', () => {
       `,
       variables: {
         userId: userId1,
-        title: 'Visible Post',
-        content: 'This post is visible.',
+        title: 'Visible Post for logs',
+        content: 'This post is visible for log.',
       },
     })
     postIdWithHiddenAtNull = result1.data.insert_post_one.id
@@ -58,8 +58,8 @@ describe('Flow', () => {
       `,
       variables: {
         userId: userId1,
-        title: 'Hidden Post',
-        content: 'This post is hidden.',
+        title: 'Hidden Post for log',
+        content: 'This post is hidden for log.',
       },
     })
     postIdWithHiddenAtNotNull = result2.data.insert_post_one.id
@@ -134,8 +134,8 @@ describe('Flow', () => {
         `,
         variables: {
           userId,
-          title: 'Test Post',
-          content: 'This is a test post.',
+          title: 'Test Post for log',
+          content: 'This is a test post for log.',
         },
         context: {
           headers: {

@@ -31,3 +31,18 @@ select_permissions:
         hidden_at:
           _is_null: true
     comment: ""
+event_triggers:
+  - name: log_keyword
+    definition:
+      delete:
+        columns: '*'
+      enable_manual: true
+      insert:
+        columns: '*'
+      update:
+        columns: '*'
+    retry_conf:
+      interval_sec: 10
+      num_retries: 0
+      timeout_sec: 60
+    webhook: http://functions:3000/logMutation

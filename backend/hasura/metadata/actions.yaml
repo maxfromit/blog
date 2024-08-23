@@ -1,7 +1,7 @@
 actions:
   - name: getGreatings
     definition:
-      kind: ''
+      kind: ""
       handler: http://fastapi:8000
       forward_client_headers: true
       request_transform:
@@ -16,7 +16,7 @@ actions:
         version: 2
   - name: getItemIdAndQ
     definition:
-      kind: ''
+      kind: ""
       handler: http://fastapi:8000
       forward_client_headers: true
       request_transform:

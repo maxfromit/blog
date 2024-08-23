@@ -3,7 +3,10 @@ type Query {
 }
 
 type Query {
-  getItemIdAndQ(itemId: Int!, q: JSON): JSON
+  getItemIdAndQ(
+    itemId: Int!
+    q: JSON
+  ): JSON
 }
 
 type Mutation {
@@ -158,3 +161,4 @@ type SampleOutput {
 }
 
 scalar JSON
+
