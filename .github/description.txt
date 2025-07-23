@@ -1,0 +1,3 @@
+A modern, minimal blog platform with Hasura, Nhost, PostgreSQL, FastAPI, serverless functions, and Stripe-mock. Features robust user role management, secure CRUD for posts/keywords, asynchronous payment processing, and automated tests. Dockerized for easy local development.
+
+**Topics:** hasura, graphql, fastapi, serverless, payments, stripe-mock, docker, postgresql, nhost, blog-platform, vitest
