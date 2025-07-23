@@ -1,6 +1,6 @@
 # Mini Blog Platform
 
-A modern, minimal blog platform built with Hasura, Nhost, PostgreSQL, FastAPI, and serverless functions. Designed for robust user role management, secure CRUD operations, and asynchronous payment processing.
+A modern, minimal blog platform backend with Hasura, Nhost, PostgreSQL, FastAPI, serverless functions, and Stripe-mock. Demonstrates robust user role management, secure CRUD for posts/keywords, asynchronous payment processing, and automated tests. No frontend included—this is a backend technical showcase and foundation.
 
 ## Features
 
